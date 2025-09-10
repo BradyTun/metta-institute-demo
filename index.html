@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metta Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Quicksand:wght@600;700&family=Sen:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Sen', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .button-font {
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#F5F5F4] text-[#1C1C1C]">
+    <!-- Navbar -->
+    <nav class="bg-white px-8 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <!-- <img
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3f/OOjs_UI_icon_academic.svg"
+            alt="Metta Institute"
+            class="h-10 w-10"
+          /> -->
+                <span class="text-xs md:text-2xl font-bold heading-font">Metta Institute Logo</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block button-font bg-[#FFB512] text-white px-5 py-2 rounded-full hover:bg-[#F97316]">
+                    Dashboard
+                </button>
+                <!-- Cart -->
+                <button class="relative">
+                    <i data-feather="shopping-cart" class="w-6 h-6"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-[#F97316] text-white text-xs px-2 py-0.5 rounded-full">2</span>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="menu-btn">
+                    <i data-feather="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden px-6 pb-4" id="mobile-menu">
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="relative bg-gradient-to-r from-[#15803D] to-[#0d5c28] text-white py-16 px-6 md:px-16 overflow-hidden">
+        <!-- Decorative Background Glow -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-[#FFB512] rounded-full blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#F97316] rounded-full blur-3xl opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-12 relative z-10">
+            <!-- Left Content -->
+            <div>
+                <h1 class="heading-font text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Confidently <span class="bg-[#FFB512] text-[#1C1C1C] px-3 rounded">Speak</span>
+                    A New Language
+                </h1>
+                <p class="mb-6 text-lg max-w-lg">
+                    Join over <span class="font-bold">240,000 learners</span> improving their
+                    language skills every day with Metta Institute.
+                </p>
+
+                <!-- Feature List with Icons -->
+                <ul class="mb-8 space-y-4 text-base">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="video" class="w-5 h-5 text-[#FFB512]"></i>
+                        Live classes online 24/7
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-[#FFB512]"></i>
+                        Learn in small groups or 1-on-1
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="clock" class="w-5 h-5 text-[#FFB512]"></i>
+                        Free 7-day trial
+                    </li>
+                </ul>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="button-font bg-[#FFB512] text-[#1C1C1C] px-6 py-3 rounded-full hover:bg-[#F97316] transition">
+                        Explore All Courses
+                    </button>
+                    <a href="#" class="flex items-center gap-2 underline self-center hover:text-[#FFB512] transition">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        See How It Works
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Content (Image + Stats) -->
+            <div class="relative flex justify-center">
+                <!-- Student Image -->
+                <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=80"
+                    alt="Student Learning" class="rounded-2xl shadow-2xl w-80 md:w-96 object-cover" />
+
+                <!-- Floating Stats -->
+                <!-- Student Count -->
+                <div
+                    class="absolute -top-8 -left-8 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-4 rounded-2xl shadow-lg text-sm font-semibold flex items-center gap-2 transform hover:scale-105 transition">
+                    <i data-lucide="users" class="w-5 h-5 text-white"></i>
+                    <span>240K+ Students</span>
+                </div>
+
+                <!-- Courses -->
+                <div
+                    class="absolute bottom-6 -left-12 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-4 rounded-2xl shadow-lg text-sm font-semibold flex items-center gap-2 transform hover:scale-105 transition">
+                    <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
+                    <span>150+ Courses</span>
+                </div>
+
+                <!-- Rating -->
+                <div
+                    class="absolute -top-8 right-0 bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-4 rounded-2xl shadow-lg text-sm font-semibold flex items-center gap-2 transform hover:scale-105 transition">
+                    <i data-lucide="star" class="w-5 h-5 text-yellow-300"></i>
+                    <span>4.9 Rating</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Language Categories -->
+    <section class="py-16 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto flex items-center justify-between mb-10 flex-wrap">
+            <h2 class="heading-font text-3xl font-bold">Our Language Categories</h2>
+            <a href="#" class="text-sm underline">Browse All Categories →</a>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Cards -->
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/gb.png" alt="English" class="h-8 mb-4" />
+                <h3 class="font-semibold">English</h3>
+                <p class="text-sm text-gray-500">1 Course</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/cn.png" alt="Chinese" class="h-8 mb-4" />
+                <h3 class="font-semibold">Chinese</h3>
+                <p class="text-sm text-gray-500">1 Course</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/kr.png" alt="Korean" class="h-8 mb-4" />
+                <h3 class="font-semibold">Korean</h3>
+                <p class="text-sm text-gray-500">3 Courses</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/jp.png" alt="Japanese" class="h-8 mb-4" />
+                <h3 class="font-semibold">Japanese</h3>
+                <p class="text-sm text-gray-500">0 Courses</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/mm.png" alt="Myanmar" class="h-8 mb-4" />
+                <h3 class="font-semibold">Myanmar (Burmese)</h3>
+                <p class="text-sm text-gray-500">0 Courses</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/th.png" alt="Thai" class="h-8 mb-4" />
+                <h3 class="font-semibold">Thai</h3>
+                <p class="text-sm text-gray-500">0 Courses</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/ru.png" alt="Russian" class="h-8 mb-4" />
+                <h3 class="font-semibold">Russian</h3>
+                <p class="text-sm text-gray-500">4 Courses</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-1">
+                <img src="https://flagcdn.com/w40/it.png" alt="Italian" class="h-8 mb-4" />
+                <h3 class="font-semibold">Italian</h3>
+                <p class="text-sm text-gray-500">0 Courses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 px-8 md:px-16 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <!-- Left Side: Image with Play Button -->
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80"
+                    alt="Why Choose Us" class="rounded-2xl shadow-lg w-full object-cover" />
+
+                <!-- Play Button -->
+                <button
+                    class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 transition rounded-2xl">
+                    <div class="bg-white w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+                        <i data-lucide="play" class="w-7 h-7 text-[#15803D]"></i>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Right Side: Text -->
+            <div>
+                <span
+                    class="inline-block px-4 py-1 text-sm font-semibold bg-[#E6F9ED] text-[#15803D] rounded-full mb-4">Why
+                    Choose Us</span>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4">
+                    Transform Your Language <br /> With Our Courses
+                </h2>
+                <p class="text-gray-600 mb-8">
+                    With Metta Institute, you can build confidence in speaking new languages.
+                    Learn from expert instructors, gain practical experience, and join a global
+                    community of learners.
+                </p>
+
+                <!-- Features -->
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="bg-[#FFB512] text-[#1C1C1C] w-12 h-12 flex items-center justify-center rounded-full">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Learn Anytime With 120k+ Lessons</h3>
+                            <p class="text-gray-500 text-sm">On-demand and live video courses.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-[#F97316] text-white w-12 h-12 flex items-center justify-center rounded-full">
+                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Taught By Real-World Experts</h3>
+                            <p class="text-gray-500 text-sm">Practical skills from experienced teachers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Class Courses Section -->
+    <section class="py-16 px-8 md:px-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block px-4 py-1 text-sm font-semibold bg-[#E6F9ED] text-[#15803D] rounded-full mb-4">
+                    Top Class Courses
+                </span>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold text-gray-900">
+                    Get The Best Language Class <br /> Experience With Us
+                </h2>
+            </div>
+
+            <!-- Course Cards -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80"
+                            alt="Lesson Testing" class="w-full h-48 object-cover" />
+                        <span
+                            class="absolute top-3 left-3 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow">TOPIK</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-1">Lesson Testing</h3>
+                        <p class="text-[#15803D] font-bold mb-1">100,000 Ks</p>
+                        <p class="text-gray-500 text-sm mb-3">TesterTeacher</p>
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>TOPIK</span>
+                            <span>Korea</span>
+                        </div>
+                        <!-- Lessons -->
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="mr-2">📘</span> 3 Lessons
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+                            alt="IELTS Preparation" class="w-full h-48 object-cover" />
+                        <span
+                            class="absolute top-3 left-3 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow">IELTS</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-1">IELTS 7 Plus: Complete IELTS Prep</h3>
+                        <p class="text-[#15803D] font-bold mb-1">150,000 Ks</p>
+                        <p class="text-gray-500 text-sm mb-3">Chan Kyone</p>
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>IELTS</span>
+                            <span>English</span>
+                        </div>
+                        <!-- Lessons -->
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="mr-2">📘</span> 8 Lessons
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80"
+                            alt="Korean Grammar" class="w-full h-48 object-cover" />
+                        <span
+                            class="absolute top-3 left-3 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow">TOPIK</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-1">Korean Topik Grammar 3 - Full Course</h3>
+                        <p class="text-[#15803D] font-bold mb-1">200,000 Ks</p>
+                        <p class="text-gray-500 text-sm mb-3">Ei Myat Mon</p>
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>TOPIK</span>
+                            <span>Korea</span>
+                        </div>
+                        <!-- Lessons -->
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="mr-2">📘</span> 12 Lessons
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=800&q=80"
+                            alt="Chinese Course" class="w-full h-48 object-cover" />
+                        <span
+                            class="absolute top-3 left-3 bg-white text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow">HSK
+                            1</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-1">Learn Chinese: From Zero To HSK 1</h3>
+                        <p class="text-[#15803D] font-bold mb-1">200,000 Ks</p>
+                        <p class="text-gray-500 text-sm mb-3">Thiri San</p>
+                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                            <span>HSK 1</span>
+                            <span>Chinese</span>
+                        </div>
+                        <!-- Lessons -->
+                        <div class="flex items-center text-sm text-gray-600">
+                            <span class="mr-2">📘</span> 10 Lessons
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <a href="/courses"
+                class="inline-block bg-green-600 text-white font-medium px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">
+                View All Courses →
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 md:px-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold">Frequently Asked Questions</h2>
+            <p class="text-gray-600 mt-2">Find answers to the most common questions about Metta Institute.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+            <!-- FAQ Item -->
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                    class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 hover:bg-gray-100 transition"
+                    onclick="toggleFAQ(this)">
+                    <span>What courses does Metta Institute offer?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                </button>
+                <div class="hidden p-4 text-gray-600 border-t border-gray-200">
+                    We provide a wide range of language courses, from beginner to advanced levels, designed and taught
+                    by expert instructors.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                    class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 hover:bg-gray-100 transition"
+                    onclick="toggleFAQ(this)">
+                    <span>How do I enroll in a course?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                </button>
+                <div class="hidden p-4 text-gray-600 border-t border-gray-200">
+                    You can enroll directly on our website by selecting a course, signing up, and completing the payment
+                    process.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                    class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 hover:bg-gray-100 transition"
+                    onclick="toggleFAQ(this)">
+                    <span>Do you offer certificates after completion?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                </button>
+                <div class="hidden p-4 text-gray-600 border-t border-gray-200">
+                    Yes! After completing a course, you’ll receive a certificate of achievement from Metta Institute.
+                </div>
+            </div>
+
+            <!-- FAQ Item -->
+            <div class="border border-gray-200 rounded-lg overflow-hidden">
+                <button
+                    class="w-full flex justify-between items-center p-4 text-left font-medium text-gray-800 hover:bg-gray-100 transition"
+                    onclick="toggleFAQ(this)">
+                    <span>Can I learn at my own pace?</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                </button>
+                <div class="hidden p-4 text-gray-600 border-t border-gray-200">
+                    Absolutely! You can access lessons anytime and learn at your own speed with lifetime access to
+                    course materials.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector("i");
+
+            if (content.classList.contains("hidden")) {
+                content.classList.remove("hidden");
+                icon.classList.add("rotate-180");
+            } else {
+                content.classList.add("hidden");
+                icon.classList.remove("rotate-180");
+            }
+        }
+    </script>
+
+
+    <section class="bg-[#F472B6] text-white py-16 px-6 md:px-20 relative overflow-hidden">
+        <div class="flex justify-between items-center">
+
+            <!-- Left text -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold leading-snug">
+                    Thousands Of <span class="bg-yellow-400 text-black px-2 py-1 rounded-md">Courses</span><br>
+                    Authored By Industry Experts
+                </h2>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex flex-col md:flex-row md:space-x-12 justify-center items-center">
+                <!-- Students -->
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold">45K+</div>
+                    <div class="mt-2 text-gray-300">Active Students</div>
+                </div>
+                <div class="hidden md:block w-px h-16 bg-gray-500"></div>
+                <!-- Instructors -->
+                <div class="text-center">
+                    <div class="text-5xl font-extrabold">328+</div>
+                    <div class="mt-2 text-gray-300">Best Instructors</div>
+                </div>
+                <div class="hidden md:block w-px h-16 bg-gray-500"></div>
+                <!-- Lessons -->
+                <div class="text-center">
+                    <div class="flex items-center justify-center space-x-2 text-5xl font-extrabold">
+                        <i data-lucide="book-open" class="w-10 h-10"></i>
+                        <span>1200+</span>
+                    </div>
+                    <div class="mt-2 text-gray-300">Lessons</div>
+                </div>
+            </div>
+
+            <!-- Right image
+            <div class="flex justify-center">
+                <img src="/instructors.png" alt="Instructors" class="w-72 md:w-80 object-cover">
+            </div> -->
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#1C1C1C] text-gray-300 py-16 px-8 md:px-16">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
+
+            <!-- Column 1: Logo + Description -->
+            <div>
+                <!-- <img src="/metta-logo.png" alt="Metta Institute Logo" class="h-10 mb-6"> -->
+                <p class="text-sm leading-relaxed">
+                    Learn languages with <strong>Metta Institute</strong>. We provide beginner to advanced
+                    courses with expert instructors, practical lessons, and flexible schedules. Build confidence
+                    and join a global learning community today — anytime, anywhere!
+                </p>
+            </div>
+
+            <!-- Column 2: Useful Links -->
+            <div>
+                <h3 class="text-white font-semibold text-lg mb-4 relative">Useful Links
+                    <span class="block w-10 h-0.5 bg-[#16A34A] mt-2"></span>
+                </h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition">Courses</a></li>
+                    <li><a href="#" class="hover:text-white transition">Categories</a></li>
+                    <li><a href="#" class="hover:text-white transition">Instructors</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Languages -->
+            <div>
+                <h3 class="text-white font-semibold text-lg mb-4 relative">Languages
+                    <span class="block w-10 h-0.5 bg-[#16A34A] mt-2"></span>
+                </h3>
+                <ul class="space-y-3 text-sm">
+                    <li>English</li>
+                    <li>Chinese</li>
+                    <li>Korean</li>
+                    <li>Japanese</li>
+                    <li>Myanmar (Burmese)</li>
+                    <li>Thai</li>
+                    <li>Russian</li>
+                    <li>Italian</li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Contact -->
+            <div>
+                <h3 class="text-white font-semibold text-lg mb-4 relative">Get In Touch
+                    <span class="block w-10 h-0.5 bg-[#16A34A] mt-2"></span>
+                </h3>
+                <p class="text-sm mb-4">
+                    No. 123, Example Street, Downtown, Yangon, Myanmar
+                </p>
+                <p class="text-sm mb-1">info@mettainstitute.com</p>
+                <p class="text-sm mb-4">+95 9 123 456 789</p>
+                <!-- Social Links -->
+                <div class="flex space-x-4 text-xl">
+                    <a href="#" class="hover:text-white transition"><i data-lucide="facebook"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom small footer -->
+        <div class="mt-12 pt-6 text-center text-xs text-white">
+            © 2025 Metta Institute. All rights reserved.
+        </div>
+
+        <!-- Back to Top Button -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            class="fixed bottom-6 right-6 bg-[#16A34A] hover:bg-[#15803D] text-white p-3 rounded-full shadow-lg transition">
+            <i data-lucide="chevron-up"></i>
+        </button>
+    </footer>
+
+
+    <script>
+        feather.replace();
+        document
+            .getElementById("menu-btn")
+            .addEventListener("click", function () {
+                const menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+            });
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
