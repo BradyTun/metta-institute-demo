@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Metta Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Libre+Baskerville:wght@700&family=Quicksand:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sen', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        button,
+        a {
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white px-2 md:px-6 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-2 md:px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <img src="assets/logo.png" alt="Metta Institute" class="h-10 w-10 md:h-16 md:w-16 object-cover" />
+                <span class="text-xs md:text-2xl font-bold heading-font">Metta Institute</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block button-font bg-[#FFB512] text-white px-5 py-2 rounded-full hover:bg-[#F97316]">
+                    Dashboard
+                </button>
+                <!-- Cart -->
+                <button class="relative">
+                    <i data-feather="shopping-cart" class="w-6 h-6"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-[#F97316] text-white text-xs px-2 py-0.5 rounded-full">2</span>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="menu-btn">
+                    <i data-feather="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden px-6 pb-4" id="mobile-menu">
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex max-w-7xl mx-auto px-6 py-10 space-x-10">
+
+        <!-- Sidebar -->
+        <div class="w-1/4 space-y-6">
+            <div class="bg-[#4A8B8C] text-white p-6 rounded-xl">
+                <h2 class="text-xl font-semibold">Welcome, Kyaw Ko Ko Tun</h2>
+                <p class="text-sm">Explore your learning path here.</p>
+            </div>
+
+            <!-- Include Font Awesome CDN -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+                rel="stylesheet">
+
+            <nav class="space-y-4 text-gray-700">
+                <a href="#"
+                    class="flex items-center gap-2 hover:bg-[#F97316] hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-tachometer-alt"></i></span> Dashboard
+                </a>
+                <a href="#"
+                    class="flex items-center gap-2 hover:bg-[#F97316] hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-book"></i></span> Enrolled Courses
+                </a>
+                <a href="#"
+                    class="flex items-center gap-2 hover:bg-[#F97316] hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-star"></i></span> Reviews
+                </a>
+                <a href="#"
+                    class="flex items-center gap-2 hover:bg-[#F97316] hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-clipboard-list"></i></span> Order History
+                </a>
+                <a href="#"
+                    class="flex items-center gap-2 hover:bg-[#F97316] hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-cogs"></i></span> Settings
+                </a>
+
+                <a href="#"
+                    class="flex items-center gap-2 text-red-600 hover:bg-red-600 hover:text-white p-3 rounded-xl transition">
+                    <span class="text-xl"><i class="fas fa-sign-out-alt"></i></span> Logout
+                </a>
+            </nav>
+
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="flex-1 space-y-10">
+
+            <!-- Profile Section -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex space-x-6">
+                    <!-- Replace Profile Image with Font Awesome Icon -->
+                    <!-- Container for Circle -->
+                    <div class="w-32 h-32 rounded-full bg-gray-200 flex items-center justify-center shadow-md">
+                        <!-- Font Awesome Icon -->
+                        <i class="fas fa-user text-4xl text-gray-700"></i>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h2 class="text-3xl font-bold text-[#4A8B8C]">Kyaw Ko Ko Tun</h2>
+                        <p class="text-sm text-gray-600">Language Enthusiast | Intermediate Spanish Learner</p>
+
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-gray-100 p-4 rounded-xl">
+                                <p class="text-2xl font-bold text-[#4A8B8C]">5</p>
+                                <p class="text-sm text-gray-600">Courses Enrolled</p>
+                            </div>
+                            <div class="bg-gray-100 p-4 rounded-xl">
+                                <p class="text-2xl font-bold text-[#4A8B8C]">2</p>
+                                <p class="text-sm text-gray-600">Completed Courses</p>
+                            </div>
+                        </div>
+
+                        <button class="px-6 py-3 bg-[#FFB512] text-white rounded-xl hover:bg-[#F97316] transition">
+                            Edit Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enrolled Courses Section -->
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold text-[#4A8B8C] mb-6">My Courses</h2>
+
+                <!-- Courses Cards -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center gap-2">
+                            <img src="https://flagcdn.com/w40/es.png" alt="Spanish" class="h-8" />
+                            <h3 class="font-semibold text-lg">Spanish for Beginners</h3>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 my-3">
+                            <div class="bg-[#4A8B8C] h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">70% Complete</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center gap-2">
+                            <img src="https://flagcdn.com/w40/jp.png" alt="Japanese" class="h-8" />
+                            <h3 class="font-semibold text-lg">Japanese Basics</h3>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 my-3">
+                            <div class="bg-[#4A8B8C] h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">40% Complete</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                        <div class="flex items-center gap-2">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="French" class="h-8" />
+                            <h3 class="font-semibold text-lg">French Essentials</h3>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2 my-3">
+                            <div class="bg-[#4A8B8C] h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                        <p class="text-sm text-gray-600">20% Complete</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enroll & Payment - Metta Institute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Quicksand:wght@600;700&family=Sen:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Sen', sans-serif;
+            background-color: #F5F5F4;
+        }
+
+        .heading-font {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .button-font {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            visibility: hidden;
+        }
+
+        input[type="file"]::before {
+            content: 'Upload Screenshot';
+            display: inline-block;
+            background: #FFB512;
+            color: #1C1C1C;
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        input[type="file"]:hover::before {
+            background: #F97316;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+<nav class="bg-white px-2 md:px-6 shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-2 md:px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <img
+            src="assets/logo.png"
+            alt="Metta Institute"
+            class="h-10 w-10 md:h-16 md:w-16 object-cover"
+          />
+                <span class="text-xs md:text-2xl font-bold heading-font">Metta Institute</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex gap-8 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:block button-font bg-[#FFB512] text-white px-5 py-2 rounded-full hover:bg-[#F97316]">
+                    Dashboard
+                </button>
+                <!-- Cart -->
+                <button class="relative">
+                    <i data-feather="shopping-cart" class="w-6 h-6"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-[#F97316] text-white text-xs px-2 py-0.5 rounded-full">2</span>
+                </button>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="menu-btn">
+                    <i data-feather="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden px-6 pb-4" id="mobile-menu">
+            <ul class="flex flex-col gap-4 text-sm font-medium">
+                <li><a href="#" class="text-[#15803D]">Home</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Courses</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+                <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Enrollment Section -->
+    <section class="max-w-5xl mx-auto my-16 bg-white shadow-xl rounded-3xl overflow-hidden">
+        <div class="bg-gradient-to-r from-[#15803D] to-[#0d5c28] text-white p-8 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold heading-font">Complete Your Enrollment</h1>
+            <p class="mt-2 text-lg">Choose your course, select payment method, and submit your payment proof.</p>
+        </div>
+
+        <!-- Enrollment Form -->
+        <form class="p-8 space-y-8">
+            <!-- Step 1: Course Selection -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">1. Choose Your Course</h2>
+                <select id="course-select" placeholder="Select a course..."
+                    class="w-full p-4 rounded-xl border border-gray-300 shadow-sm focus:ring-2 focus:ring-green-400 focus:border-green-400">
+                    <option value="">Select a course...</option>
+                    <option value="TOPIK">TOPIK Korean Course - 100,000 Ks</option>
+                    <option value="IELTS">IELTS 7+ Prep - 150,000 Ks</option>
+                    <option value="Business">Business English - 120,000 Ks</option>
+                    <option value="Python">Python Programming - 200,000 Ks</option>
+                    <option value="UIUX">UI/UX Design - 180,000 Ks</option>
+                </select>
+            </div>
+
+            <!-- Tom Select JS & CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+            <script>
+                new TomSelect("#course-select", {
+                    create: false,
+                    sortField: { field: "text", direction: "asc" },
+                    searchField: ["text"],
+                    maxOptions: 10,
+                    render: {
+                        option: function (data, escape) {
+                            return `<div class="p-2 hover:bg-green-50 cursor-pointer">${escape(data.text)}</div>`;
+                        },
+                        item: function (data, escape) {
+                            return `<div class="px-2 py-1 bg-green-100 rounded-full text-green-900">${escape(data.text)}</div>`;
+                        }
+                    }
+                });
+            </script>
+
+
+            <!-- Step 2: Payment Method -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">2. Payment Method</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <label class="cursor-pointer">
+                        <input type="radio" name="payment" value="KBZ" class="hidden peer" checked />
+                        <div
+                            class="p-4 border rounded-xl shadow hover:shadow-lg transition peer-checked:border-yellow-500 peer-checked:bg-yellow-50">
+                            <h3 class="font-semibold">KBZ Pay</h3>
+                            <p class="text-gray-500 mt-1">Phone: 09 123 456 789</p>
+                            <p class="text-gray-500">Account Name: Metta Institute</p>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer">
+                        <input type="radio" name="payment" value="Wave" class="hidden peer" />
+                        <div
+                            class="p-4 border rounded-xl shadow hover:shadow-lg transition peer-checked:border-pink-400 peer-checked:bg-pink-50">
+                            <h3 class="font-semibold">Wave Pay</h3>
+                            <p class="text-gray-500 mt-1">Phone: 09 987 654 321</p>
+                            <p class="text-gray-500">Account Name: Metta Institute</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 3: Upload Screenshot -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">3. Payment Screenshot</h2>
+                <div class="flex flex-col gap-4">
+                    <input type="file" id="screenshot" accept="image/*" onchange="previewScreenshot(event)" />
+                    <div
+                        class="w-full h-64 border border-dashed rounded-xl flex items-center justify-center bg-gray-50 overflow-hidden">
+                        <img id="screenshot-preview" class="object-contain h-full" />
+                        <span id="placeholder" class="text-gray-400">Preview will appear here</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Submit -->
+            <div class="text-center">
+                <button type="submit"
+                    class="button-font bg-[#FFB512] text-[#1C1C1C] px-8 py-3 rounded-full font-semibold hover:bg-[#F97316] transition text-lg">
+                    Submit Enrollment
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1C1C1C] text-gray-300 py-12 text-center">
+        <p class="text-sm">&copy; 2025 Metta Institute. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+
+        document.getElementById("menu-btn").addEventListener("click", function () {
+            const menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
+        });
+
+        function previewScreenshot(event) {
+            const preview = document.getElementById("screenshot-preview");
+            const placeholder = document.getElementById("placeholder");
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                    placeholder.style.display = "none";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+                preview.style.display = "none";
+                placeholder.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
