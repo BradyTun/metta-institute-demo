@@ -12,4 +12,5 @@
     { "source": "/checkout.html", "destination": "/checkout.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
+  
 }
