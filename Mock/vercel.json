@@ -1,5 +1,15 @@
-    {
-      "rewrites": [
-        { "source": "/(.*)", "destination": "/" }
-      ]
-    } 
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/index.html", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/login.html", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/signup.html" },
+    { "source": "/signup.html", "destination": "/signup.html" },
+    { "source": "/profile", "destination": "/profile.html" },
+    { "source": "/profile.html", "destination": "/profile.html" },
+    { "source": "/checkout", "destination": "/checkout.html" },
+    { "source": "/checkout.html", "destination": "/checkout.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
