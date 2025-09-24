@@ -10,6 +10,8 @@
     { "source": "/profile.html", "destination": "/profile.html" },
     { "source": "/checkout", "destination": "/checkout.html" },
     { "source": "/checkout.html", "destination": "/checkout.html" },
+    { "source": "/lesson", "destination": "/lesson.html" },
+    { "source": "/lesson.html", "destination": "/lesson.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
   

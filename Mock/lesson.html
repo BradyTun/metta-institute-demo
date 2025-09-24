@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson - Metta Institute</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&family=Libre+Baskerville:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Sen', sans-serif;
+      background-color: #f9fafb;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Libre Baskerville', serif;
+    }
+
+    button,
+    a {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    /* Accordion icons rotation */
+    .module-btn i {
+      transition: transform 0.3s ease;
+    }
+
+    /* Smooth card hover effect */
+    .module-card,
+    .lesson-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .module-card:hover,
+    .lesson-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-[#0d5c28]">
+
+  <!-- Navbar (unchanged) -->
+  <nav class="bg-white px-2 md:px-6 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-2 md:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="assets/logo.png" alt="Metta Institute" class="h-10 w-10 md:h-16 md:w-16 object-cover" />
+        <span class="text-xs md:text-2xl font-bold heading-font">Metta Institute</span>
+      </div>
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="/" class="text-[#15803D]">Home</a></li>
+        <li><a href="/courses" class="hover:text-[#F97316]">Courses</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <button class="hidden md:block button-font bg-[#FFB512] text-white px-5 py-2 rounded-full hover:bg-[#F97316] transition">Dashboard</button>
+        <button class="relative">
+          <i data-feather="shopping-cart" class="w-6 h-6"></i>
+          <span class="absolute -top-2 -right-2 bg-[#F97316] text-white text-xs px-2 py-0.5 rounded-full">2</span>
+        </button>
+        <button class="md:hidden" id="menu-btn">
+          <i data-feather="menu" class="w-7 h-7"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="hidden md:hidden px-6 pb-4" id="mobile-menu">
+      <ul class="flex flex-col gap-4 text-sm font-medium">
+        <li><a href="/" class="text-[#15803D]">Home</a></li>
+        <li><a href="/courses" class="hover:text-[#F97316]">Courses</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Categories</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Instructors</a></li>
+        <li><a href="#" class="hover:text-[#F97316]">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+    <!-- Course Outline -->
+    <div class="md:col-span-1 space-y-6">
+      <div class="bg-white p-6 rounded-2xl shadow-lg sticky top-24">
+        <h3 class="text-3xl font-bold text-[#0d5c28] mb-6">Course Outline</h3>
+
+        <div class="space-y-4">
+          <!-- Module Template -->
+          <div class="border rounded-xl overflow-hidden module-card">
+            <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-[#F97316] hover:text-white transition module-btn">
+              <span class="font-semibold text-lg">Module 1: Basics</span>
+              <i data-feather="chevron-down" class="w-5 h-5"></i>
+            </button>
+            <div class="hidden module-content p-4 space-y-2 bg-gray-50">
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 1: Introduction</p>
+                <p class="text-sm text-gray-500">10 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 2: Greetings</p>
+                <p class="text-sm text-gray-500">15 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Quiz 1: Basics Quiz</p>
+                <p class="text-sm text-gray-500">5 Questions</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-xl overflow-hidden module-card">
+            <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-[#F97316] hover:text-white transition module-btn">
+              <span class="font-semibold text-lg">Module 2: Pronunciation</span>
+              <i data-feather="chevron-down" class="w-5 h-5"></i>
+            </button>
+            <div class="hidden module-content p-4 space-y-2 bg-gray-50">
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 1: Vowels & Consonants</p>
+                <p class="text-sm text-gray-500">12 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 2: Accent Marks</p>
+                <p class="text-sm text-gray-500">8 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Quiz 2: Pronunciation Quiz</p>
+                <p class="text-sm text-gray-500">5 Questions</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded-xl overflow-hidden module-card">
+            <button class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-[#F97316] hover:text-white transition module-btn">
+              <span class="font-semibold text-lg">Module 3: Essential Phrases</span>
+              <i data-feather="chevron-down" class="w-5 h-5"></i>
+            </button>
+            <div class="hidden module-content p-4 space-y-2 bg-gray-50">
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 1: Asking Questions</p>
+                <p class="text-sm text-gray-500">10 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Lesson 2: Common Expressions</p>
+                <p class="text-sm text-gray-500">12 min</p>
+              </div>
+              <div class="pl-4 border-l-2 border-[#4A8B8C]">
+                <p class="font-medium text-[#15803D]">Quiz 3: Essential Phrases Quiz</p>
+                <p class="text-sm text-gray-500">5 Questions</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Lesson Content -->
+    <div class="md:col-span-2 space-y-10">
+      <div class="bg-white p-8 rounded-2xl shadow-lg lesson-card space-y-6">
+        <h2 class="text-4xl font-bold text-[#0d5c28]">Spanish Lesson 1: Introduction</h2>
+        <p class="text-gray-600 text-lg">Learn basic greetings, pronunciation, and essential phrases to confidently start
+          speaking Spanish.</p>
+
+        <div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-md group">
+          <video controls class="w-full h-full object-cover rounded-xl">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div
+            class="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-0 group-hover:opacity-90 bg-black bg-opacity-25 transition cursor-pointer">
+            ▶
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-4">
+          <span class="text-gray-500">Duration: 25 min</span>
+          <span class="text-gray-500">Level: Beginner</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    feather.replace();
+
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+    const moduleButtons = document.querySelectorAll(".module-btn");
+    moduleButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle("hidden");
+        const icon = btn.querySelector("i");
+        icon.classList.toggle("rotate-180");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
